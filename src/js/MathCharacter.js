@@ -16,11 +16,13 @@ export default class MathCharacter extends Character {
   }
 
   set basicAttack(value) {
-    this.basicAttack = value;
+    // eslint-disable-next-line no-underscore-dangle
+    this._basicAttack = value;
   }
 
   get basicAttack() {
-    let lastAttack = ((100 - (this.distance - 1) * 10) / 100) * this.basicAttack;
+    // eslint-disable-next-line no-underscore-dangle
+    let lastAttack = ((100 - (this.distance - 1) * 10) / 100) * this._basicAttack;
     if (this.stoned) {
       lastAttack -= Math.log2(this.distance) * 5;
     }
